@@ -1,0 +1,50 @@
+.navbar {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+  cursor: pointer;
+}
+
+.burger-button {
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  gap: 20px;
+}
+
+.nav-item {
+  color: var(--clr-nav);
+  font-size: var(--font-nav);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar {
+    padding: 0 40px;
+  }
+  .navbar-container {
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    height: 50px;
+    padding: 0 20px;
+    border-bottom: 2px solid var(--clr-gray);
+  }
+}
