@@ -13,7 +13,9 @@
   --clr-white: #ffffff;
   --clr-gray: #aabbcc;
   --clr-blue: #3599ee;
+  --clr-red: red;
   /* ------------font size------------ */
+  --font-big: 2rem; /*32px*/
   --font-title: 1.75rem; /*28px*/
   --font-subtitle: 1.25rem; /*20px*/
   --font-text: 1.125rem; /*18px*/
