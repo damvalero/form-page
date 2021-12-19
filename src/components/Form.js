@@ -4,8 +4,8 @@ import "./Form.css";
 import FormLogic from "./FormLogic";
 import validate from "../form-controls/FormValidation";
 
-const Form = () => {
-  const { handleChange, values, handleSubmit, errors } = FormLogic(
+const Form = ({submitForm}) => {
+  const { handleChange, values, handleSubmit, errors } = FormLogic(submitForm,
     validate
   );
 

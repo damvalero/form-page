@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 
-const FormLogic = (validate) => {
+const FormLogic = (callback, validate) => {
   const [values, setValues] = useState({
     company: "",
     name: "",
@@ -9,6 +9,7 @@ const FormLogic = (validate) => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +23,15 @@ const FormLogic = (validate) => {
     e.preventDefault();
 
     setErrors(validate(values));
+    setIsSubmitting(true);
   };
+
+  useEffect (
+    () => {
+      if(Object.keys(errors).length === 0 && isSubmitting ) {
+        callback();
+      }
+  }, [errors])
 
   return { handleChange, values, handleSubmit, errors};
 };
